@@ -1,0 +1,59 @@
+<div class="container-fluid" style="margin-top: 75px;">
+	<div class="row">
+		<div class="col-lg-12">
+	  		<label for="npm">NPM:</label>
+	  		<input type="NPM" class="form-control" id="npm" ng-model="export">
+		</div>
+	</div>
+	<div class="row" style="margin-top: 10px;">
+		<div class="col-lg-12">
+			<button type="button" class="btn btn-primary btn-block" ng-click="click()">Submit</button>
+		</div>
+	</div>
+	<div ng-show="panjang==0" style="margin-top: 10px;">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+				<p><b>Anda belum pernah mengikuti tes</b></p>
+			</div>
+		</div>
+	</div>
+	<div ng-repeat="data in toefldata" ng-show="data != null && panjang>0" style="margin-top: 10px;">
+		<h3>Test {{$index + 1}}</h3>
+		<div class="row">
+			<div class="col-lg-12">
+				<label for="npm">NPM:</label>
+				<output name="result" class="form-control">{{data.npm}}</output>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<label for="tanggal">Tanggal test:</label>
+				<output name="result" class="form-control">{{data.tgl_test}}</output>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<label for="listening">Listening:</label>
+				<output name="result" class="form-control">{{data.listening}}</output>
+			</div>
+
+			<div class="col-xs-6">
+				<label for="structure">Structure:</label>
+				<output name="result" class="form-control">{{data.structure}}</output>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<label for="listening">Reading:</label>
+				<output name="result" class="form-control">{{data.reading}}</output>
+			</div>
+
+			<div class="col-xs-6">
+				<label for="listening">Total:</label>
+				<output name="result" class="form-control">{{data.total}}</output>
+			</div>
+		</div>
+	</div>
+</div>

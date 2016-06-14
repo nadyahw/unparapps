@@ -1,0 +1,19 @@
+<div class='content container-fluid'>
+    <div ng-include="'partials/loader.html'"></div>
+    <div class='row'>
+       <div class="details-news">
+			<img src="{{newsData.thumbnail}}" style="width: 100%">
+
+            <div class="title-content-details">
+                <a href="javascript:window.history.back();"><img src="assets/img/back.png" class="icon-back"></a>
+                <h3 class="title-content-details">{{newsData.title}}</h3>
+            </div>
+			<div class="content-details" ng-bind-html="newsData.content"></div>
+		</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="#/news"><button type="button" class="btn btn-info btn-lg">More News</button></a>
+        </div>
+    </div>
+</div>

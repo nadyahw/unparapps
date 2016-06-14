@@ -1,0 +1,20 @@
+<div class="content container-fluid">
+	<div ng-include="'partials/loader.html'"></div>
+    <div class="row" ng-if="loading==false">
+		<div class="col-xs-12" infinite-scroll="myPagingFunction()" infinite-scroll-disabled='busy' infinite-scroll-distance='0'>
+			<div class="content-event" ng-repeat="eventX in eventsData">
+				<div class="garis"></div>
+				<div class="lingkaran"></div>
+				<div class="arrow-left"></div>
+				<div class="content-event-list">
+					<a href="#/events-details/{{eventX.id}}"><img src="{{eventX.img}}" alt="Not Available"></img></a>
+					<p class="col-content-title">{{eventX.title}}</p>
+					<p class="col-content-p">
+						{{eventX.start_date | date:'d MMMM yyyy'}}<br>
+						{{eventX.organizer}}
+					</p>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>

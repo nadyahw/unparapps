@@ -1,0 +1,78 @@
+<div class="content container-fluid">
+	<div ng-include="'partials/loader.html'"></div>
+	<div class="row" ng-if="loading==false">
+
+		<!--main news-->
+		<h2 style="padding-left:10px; padding-bottom:5px;">News</h2>
+		<div class="thumbnails-news" ng-repeat="newsX in homeNewsData | limitTo:1">
+			<div class='thumbnails-news-img'>
+                <a href="#/home-news-detail/{{newsX.id}}" class="thumb">
+                    <img src="{{newsX.thumbnail}}" class="lazy-img"/>
+                </a>
+                <div class="title-content">
+                    <a href="#/news-detail/{{newsX.id}}">{{newsX.title}}</a>
+                </div>
+            </div>
+		</div>
+		<!-- <div class="row">
+			<div ng-repeat="newsX in homeNewsData  | limitTo:4 " ng-if="$index > 0  ">
+				<a href="#/news-detail/{{newsX.id}}" style="color:#000">
+					<div class="thumbnails-child-row" >
+						<div class="col-xs-9">
+							<div class="col-content-home">
+								<p style="font-family:Roboto-Light;">News - {{newsX.create_date | date:'d MMMM yyyy HH:mm:ss'}}</p>
+								<div class="col-content-child">
+									{{newsX.title}}
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<img src="{{newsX.thumbnail}}" alt="" />
+						</div>
+					</div>
+				</a>
+			</div>
+		</div> -->
+		<h2 style="padding-left:10px; padding-bottom:5px;">Beasiswa</h2>
+		<div class="thumbnails-news" ng-repeat="newsX in homeBeasiswaData | limitTo:1">
+			<div class='thumbnails-news-img'>
+                <a href="#/home-beasiswa-details/{{newsX.id}}" class="thumb">
+                    <img src="{{newsX.thumbnail}}" class="lazy-img"/>
+                </a>
+                <div class="title-content">
+                    <a href="#/news-detail/{{newsX.id}}">{{newsX.title}}</a>
+                </div>
+            </div>
+		</div>
+		<!-- <div class="row">
+			<div ng-repeat="newsX in homeBeasiswaData | limitTo:3 ">
+				<a href="#/beasiswa-details/{{newsX.id}}" style="color:#000">
+					<div class="thumbnails-child-row">
+						<div class="col-xs-9">
+							<div class="col-content-home">
+								<p style="font-family:Roboto-Light;">Beasiswa - {{newsX.create_date | date:'d MMMM yyyy HH:mm:ss'}}</p>
+								<div class="col-content-child">
+									{{newsX.title}}
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<img src="{{newsX.thumbnail}}" alt="" />
+						</div>
+					</div>
+				</a>
+			</div>
+		</div> -->
+		<h2 style="padding-left:10px; padding-bottom:5px;">Events</h2>
+		<div ng-repeat="eventX in homeEventData | limitTo:1">
+			<div class="home-content-event-list text-center">
+				<a href="#/home-events-details/{{eventX.id}}"><img src="{{eventX.img}}" alt="Not Available"></img></a>
+				<p class="home-col-content-title">{{eventX.title}}</p>
+				<p class="home-col-content-p">
+					{{eventX.start_date | date:'d MMMM yyyy'}}<br>
+					{{eventX.organizer}}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

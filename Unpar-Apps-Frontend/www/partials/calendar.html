@@ -1,0 +1,27 @@
+<div class="content container-fluid">
+	<div class="row">
+	<div ng-include="'partials/loader.html'"></div>
+	<!--<div class="title-calendar" ng-if="calendarData"></div-->
+		<ul class="calendar-menu" ng-if="calendarData">
+			<li class="content-calendar" ng-repeat="event in calendarData">
+				<div class="row">
+					<div class="col-xs-2 col-sm-1 col-md-1">
+						<div class="tanggal-calendar">
+							<div class="tanggal" ng-if="event.end_date == null">{{event.start_date | date:'d'}}</div>
+							<div class="tanggal_2" ng-if="event.end_date != null">{{event.start_date | date:'d'}}-{{event.end_date | date:'d'}}</div>
+							<div class="bulan" ng-if="event.end_date==null || (event.start_date | date:'MMM') == (event.end_date | date:'MMM')">{{event.start_date | date:'MMMM'}}</div>
+							<div class="bulan" ng-if="event.end_date!=null && (event.start_date | date:'MMM') != (event.end_date | date:'MMM')">{{event.start_date | date:'MMM'}}-{{event.end_date | date:'MMM'}}</div>
+							<div class="tahun" ng-if="event.end_date == null || (event.start_date | date:'yyyy') == (event.end_date | date:'yyyy')">{{event.start_date | date:'yyyy'}}</div>
+							<div class="tahun" ng-if="event.end_date != null && (event.start_date | date:'yyyy') != (event.end_date | date:'yyyy')">{{event.start_date | date:'yyyy'}}-{{event.end_date | date:'yyyy'}}</div>
+						</div>
+					</div>
+					<div class="col-xs-10 col-sm-11 col-md-11">
+						<div class="kegiatan-calendar">
+							<span>{{event.name}}</span>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
