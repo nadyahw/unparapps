@@ -1,0 +1,57 @@
+<div class='content'>
+    <div class="container-fluid">
+	  <div class="row">
+	  	<div ng-include="'partials/loader.html'"></div>
+        <div class="col-md-12">
+  	        <!-- title -->
+  	        <h1 class= "header-top-about dark">ABOUT UNPARAPPS</h1>
+  	        <h4 class= "dark aboutUsText" style="padding-top:30px" >We're Making Things Easier</h4>
+		</div>
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<p class="aboutUsText dark small" style="font-size:17px; font-family:'Roboto-Regular'">
+  	        	Unpar Apps ini dibuat untuk mempermudah mahasiwa/mahasiswi Unpar dalam mendapat informasi-informasi seputar Unpar, baik itu informasi akademik ataupun non akademik.
+  	        </p>
+		<div>
+
+		<h2 class= "header-top-nav dark"  style="padding-top:30px">MEET THE TEAM</h2>
+		<div class="row">
+			<div class="col-md-12">
+			    <!--Body content-->
+				<div ng-repeat="aboutUs in about | filter:query" class="about-data">
+					<div class="our-team">
+						<img src="{{aboutUs.image}}" width="100px" height="100px">
+						<p class="smalling">
+						    <b>{{aboutUs.name}}</b><br>
+							{{aboutUs.jabatan}}<br>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<h2 class= "header-top-nav dark"  style="padding-top:30px">THANKS TO</h2>
+        <div class="row">
+            <div class="col-md-2"></div>
+    		<div class="col-md-8">
+    			<p class="aboutUsText dark small" style="font-size:17px; font-family:'Roboto-Regular'">
+                    Biro Kemahasiswaan dan Alumni<br>
+                    Biro Teknologi Informasi
+      	        </p>
+    		<div>
+        </div>
+
+        <h2 class= "header-top-nav dark"  style="padding-top:30px">CONTACT</h2>
+		<div class="row">
+            <div class="col-md-2"></div>
+			<div class="col-md-8">
+                <p class="aboutUsText dark small" style="font-size:17px; font-family:'Roboto-Regular'">
+                    Untuk masukan dan saran silakan hubungi kami.<br>
+    			    Email: unparapps@gmail.com
+      	        </p>
+			</div>
+		</div>
+	  </div>
+	</div>
+
+</div>
