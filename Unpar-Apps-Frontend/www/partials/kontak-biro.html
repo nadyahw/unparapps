@@ -1,0 +1,38 @@
+
+<div class='content'>
+    <div class="container-fluid">
+	  <div class="row">
+	  	<div ng-include="'partials/loader.html'"></div>
+        <div class="col-md-12">
+  	        <!--<div class="title-kontak-biro">Kontak Biro</div>-->
+  	        <br>
+		    <input type="text" placeholder="Enter Keyword" ng-model="query" class="form-control input-lg">
+		</div>
+		<div class="col-md-12">
+		  <!--Body content-->
+
+		   <ul class="biro">
+			<li ng-repeat="biro in contactBiro | filter:query" class="biro-data">
+			  	<!-- <p> -->
+			  	<table>
+                    <tr>
+                        <td><img src="{{biro.image}}" width="150px"></td>
+                        <td valign="top">
+                            <div class="biro-detail">
+                            <b>{{biro.name}}</b><br>
+                            {{biro.location}}<br>
+                            {{biro.phone}}<br>
+                            {{biro.email}}
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+              	<!-- </p> -->
+			</li>
+		  </ul>
+
+		</div>
+	  </div>
+	</div>
+
+</div>
