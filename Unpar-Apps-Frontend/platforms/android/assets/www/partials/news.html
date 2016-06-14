@@ -1,0 +1,20 @@
+<div class='content container-fluid'>
+    <div class='row'>
+        <div ng-include="'partials/loader.html'"></div>
+		<div class="thumbnails-news" ng-repeat="newsX in newsData">
+			<div class='thumbnails-news-img'>
+                <a href="#/news-detail/{{newsX.id}}" class="thumb">
+                    <img src="{{newsX.thumbnail}}" data-img="{{newsX.thumbnail}}" class="lazy-img">
+                </a>
+                <div class="title-content">
+                    <a href="#/news-detail/{{newsX.id}}">{{newsX.title}}</a>
+                </div>
+            </div>
+		</div>
+        <div class='pagination-btn'>
+            <div class='col-xs-6'><br><a href='#/news/{{prevPage}}' class='btn btn-default btn-prev' ng-if='currentPage > 1'><img src="assets/img/back.png" class="icon-page-news">Prev</a>
+            </div>
+            <div class='col-xs-6'><br><a href='#/news/{{nextPage}}' class='btn btn-default btn-next' ng-if='currentPage < maxPage'>Next<img src="assets/img/next.png" class="icon-page-news"></a></div>
+        </div>
+    </div>
+</div>
